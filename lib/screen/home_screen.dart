@@ -9,8 +9,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final List<int> _snakePosition = [0, 1, 2];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
               color: Colors.red,
             ),
           ),
-          const GridWidget(),
+          GridWidget(),
           Expanded(
             child: Container(
               color: Colors.red,

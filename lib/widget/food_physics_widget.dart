@@ -10,7 +10,7 @@ class FoodPhysics extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(4),
-          color: Theme.of(context).colorScheme.onPrimaryContainer,
+          color: Theme.of(context).colorScheme.errorContainer,
         ),
       ),
     );

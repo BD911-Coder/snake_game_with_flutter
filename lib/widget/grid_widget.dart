@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:snake_game/widget/food_physics_widget.dart';
 import 'package:snake_game/widget/grid_builder_widget.dart';
 import 'package:snake_game/widget/snake_physics_widget.dart';
+import 'package:snake_game/core/globals.dart' as globals;
 
 class GridWidget extends StatelessWidget {
-  GridWidget({Key? key}) : super(key: key);
-
-  final int _rowSize = 10;
-  final int _totalSquares = 100;
-  final List<int> _snakePosition = [0, 1, 2];
+  const GridWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       flex: 3,
       child: GridView.builder(
-        itemCount: _totalSquares,
+        itemCount: globals.totalSquares,
         physics: const NeverScrollableScrollPhysics(),
-        gridDelegate:
-            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: _rowSize),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: globals.rowSize),
         itemBuilder: (context, index) {
-          if (_snakePosition.contains(index)) {
+          if (globals.snakePosition.contains(index)) {
             return const SnakePhysics();
+          } else if (globals.foodPosition == index) {
+            return const FoodPhysics();
           } else {
             return const GridBuilder();
           }

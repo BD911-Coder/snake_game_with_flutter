@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:snake_game/widget/grid_widget.dart';
+import 'package:snake_game/widget/start_game_button.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -22,10 +23,11 @@ class _HomeScreenState extends State<HomeScreen> {
               color: Colors.red,
             ),
           ),
-          GridWidget(),
+          const GridWidget(),
           Expanded(
             child: Container(
               color: Colors.red,
+              child: const Center(child: StartGameButton()),
             ),
           ),
         ],

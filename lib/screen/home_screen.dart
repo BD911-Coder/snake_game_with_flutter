@@ -20,16 +20,11 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Expanded(
             child: Container(
-              color: Colors.red,
+              color: Colors.purple,
             ),
           ),
           const GridWidget(),
-          Expanded(
-            child: Container(
-              color: Colors.red,
-              child: const Center(child: StartGameButton()),
-            ),
-          ),
+          const StartGameButton()
         ],
       ),
     );
